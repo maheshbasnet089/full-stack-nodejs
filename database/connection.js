@@ -1,6 +1,7 @@
 
 // hami yaha database connection ko code/logic lekxam
-const {Sequelize,DataTypes} =  require("sequelize")
+const {Sequelize} =  require("sequelize")
+// 
 
 // const sequelize = require("sequelize")
 // const Sequelize = sequelize.Sequelize
@@ -18,11 +19,11 @@ sequelize.authenticate()
     console.log("Error aayo" + err)
 })
 
-const db  = {}
-db.Sequelize = Sequelize 
-db.sequelize = sequelize
+// const db  = {}
+// db.Sequelize = Sequelize 
+// db.sequelize = sequelize
 
-module.exports = db
+// module.exports = db
 
 
 
