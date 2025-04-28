@@ -24,6 +24,7 @@ sequelize.authenticate()
 // db.sequelize = sequelize
 
 // module.exports = db
+//testtt
 
 
 
