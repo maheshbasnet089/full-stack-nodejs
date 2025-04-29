@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start":  "node --env-file=.env --watch app.js"
+    "start":  "node --watch app.js"
   },
   "keywords": [],
   "author": "",
