@@ -1,12 +1,17 @@
 const express = require("express") // express require gareko
+const { books } = require("./database/connection")
+
+
 const app = express() // express lai trigger gareko 
 require("./database/connection")
 //test
 // let app = require("express")()
-app.get("/books",function(req,res){
+app.get("/books",async function(req,res){
     // logic to fetch books from database 
+    const datas = await books.findAll() // select * from books, books.find(), always returns array
     res.json({
-        message : "books fetched successfully"
+        message : "books fetched successfully", 
+        datas
     })
 })
 

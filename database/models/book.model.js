@@ -18,7 +18,7 @@ const bookModel = (sequelize,DataTypes)=>{
             type : DataTypes.STRING
         }
      })
-     console.log("Call vayo book Model")
+    
      return Book
 }
 module.exports = bookModel // export default bookModel
