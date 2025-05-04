@@ -29,17 +29,43 @@ exports.addBook = async function(req,res){
     })
 }
 
-exports.deleteBook = function(req,res){
-    // logic to delete book
+exports.deleteBook = async function(req,res){
+    // first ma hami, kun book delete garna aatekoho tesko id lim. 
+    const id = req.params.id // const {id} = req.params
+//    const id = req.body.id 
+    // id payisakeypaxi, tyo id ko book chai books table bata udaidim 
+    await books.destroy({
+        where : {
+            id
+        }
+    }) // delete from books where id = id
     res.json({
       message : "Book Deleted successfully"
     })
 }
-exports.editBook = function(req,res){
-    // logic to update book
+exports.editBook = async function(req,res){
+   try {
+     // logic to update book
+    // kun id ko chai edit garne tyo id linu paryo . 
+    const id = req.params.id
+    // k k update garne tw .. 
+    const {bookName,price,bookAuthor,bookGenre} = req.body
+
+    await bookslkjldjfk.update({bookName,price, bookAuthor,bookGenre },{
+        where : {
+            id : id
+        }
+    })
+    // books.findByIdAndUpdate(id,{})
+
     res.json({
       message : "Book updated successfully"
     })
+   } catch (error) {
+    res.json({
+        message : "Something went wrong"
+    })
+   }
 }
 
 exports.singleFetchBook = async function(req,res){
