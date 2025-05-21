@@ -16,6 +16,14 @@ const bookModel = (sequelize,DataTypes)=>{
         }, 
         bookGenre : {
             type : DataTypes.STRING
+        }, 
+        isDeleted : {
+            type : DataTypes.STRING, 
+            defaultValue : "false"
+        }, 
+        isDeletedss : {
+            type : DataTypes.STRING, 
+            defaultValue : "false"
         }
      })
     

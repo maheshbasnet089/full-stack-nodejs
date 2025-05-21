@@ -30,7 +30,7 @@ db.books =  require("./models/book.model")(sequelize,DataTypes)
 
 
 // migrate code ho yo chai hai 
-sequelize.sync({alter : false}).then(()=>{
+sequelize.sync({alter : true}).then(()=>{
     console.log("Migrate vayo hai tw 🚀")
 })
 
