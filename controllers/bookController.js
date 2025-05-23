@@ -14,11 +14,11 @@ exports.addBook = async function(req,res){
     // console.log(req.body)
     // const bookName = req.body.bookName
     // const bookPrice = req.body.bookPrice
-
-    const {bookNamess,bookPrice,bookAuthor,bookGenre} = req.body
+    // console.log(req.body, "Frontend aako data hooo")
+    const {bookName,bookPrice,bookAuthor,bookGenre} = req.body
     // check if all data aako xa vane only proceed , else not proceed throw error in response
     await books.create({
-        bookName : bookNamess,
+        bookName,
         price : bookPrice, 
         bookAuthor, 
         bookGenre
@@ -51,7 +51,7 @@ exports.editBook = async function(req,res){
     // k k update garne tw .. 
     const {bookName,price,bookAuthor,bookGenre} = req.body
 
-    await bookslkjldjfk.update({bookName,price, bookAuthor,bookGenre },{
+    await books.update({bookName,price, bookAuthor,bookGenre },{
         where : {
             id : id
         }
